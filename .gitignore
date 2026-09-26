@@ -1,0 +1,11 @@
+# Neovim generated files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# OS/editor junk
+.DS_Store
+
+# Local backups
+*.bak
