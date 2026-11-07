@@ -3,9 +3,9 @@ local keymap = vim.keymap.set
 -- Save and quit
 keymap("n", "<leader>w", ":w<CR>", { desc = "Save file" })
 keymap("n", "<leader>q", ":q<CR>", { desc = "Quit" })
-keymap("n", "<leader>W", ":W<CR>", { desc = "Save all files" })
-keymap("n", "<leader>Q", ":Q<CR>", { desc = "Quit all" })
-keymap("n", "<leader>!", ":!<CR>", { desc = "Force quit" })
+keymap("n", "<leader>W", "<cmd>wa<CR>", { desc = "Save all files" })
+keymap("n", "<leader>Q", "<cmd>qa<CR>", { desc = "Quit all" })
+keymap("n", "<leader>!", "<cmd>q!<CR>", { desc = "Force quit" })
 
 -- Clear search highlight
 keymap("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight"} )
@@ -41,3 +41,12 @@ keymap("n", "<leader>r", function()
     local file = vim.fn.shellescape(vim.fn.expand("%"))
     vim.cmd("!" .. python .. " " .. file)
 end, { desc = "Run Python file" })
+
+-- Window and buffer controls from the original configuration
+keymap("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
+keymap("n", "<leader>v", "<cmd>vsplit<CR>", { desc = "Vertical split" })
+keymap("n", "<leader>h", "<cmd>split<CR>", { desc = "Horizontal split" })
+keymap("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Increase window height" })
+keymap("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
+keymap("n", "<C-Left>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
+keymap("n", "<C-Right>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
