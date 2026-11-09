@@ -41,12 +41,3 @@ keymap("n", "<leader>r", function()
     local file = vim.fn.shellescape(vim.fn.expand("%"))
     vim.cmd("!" .. python .. " " .. file)
 end, { desc = "Run Python file" })
-
--- Window and buffer controls from the original configuration
-keymap("n", "<leader>x", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
-keymap("n", "<leader>v", "<cmd>vsplit<CR>", { desc = "Vertical split" })
-keymap("n", "<leader>h", "<cmd>split<CR>", { desc = "Horizontal split" })
-keymap("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Increase window height" })
-keymap("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
-keymap("n", "<C-Left>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
-keymap("n", "<C-Right>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
