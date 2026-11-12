@@ -10,7 +10,13 @@ vim.opt.backup = false
 vim.opt.undofile = true
 vim.opt.cursorline = true
 
+-- Show absolute and relative line numbers in separate columns.
+vim.opt.numberwidth = 8
+vim.opt.statuscolumn = "%#AbsoluteLineNr#%l %#RelativeLineNr#%r "
+
 local function transparent_background()
+	vim.api.nvim_set_hl(0, "AbsoluteLineNr", { fg = "#a9b1d6", bg = "NONE" })
+	vim.api.nvim_set_hl(0, "RelativeLineNr", { fg = "#7dcfff", bg = "NONE" })
 	for _, group in ipairs({ "Normal", "NormalNC", "NormalFloat", "FloatBorder", "SignColumn", "EndOfBuffer" }) do
 		vim.cmd("highlight " .. group .. " guibg=NONE ctermbg=NONE")
 	end
