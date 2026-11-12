@@ -12,7 +12,7 @@ vim.opt.cursorline = true
 
 -- Show absolute and relative line numbers in separate columns.
 vim.opt.numberwidth = 8
-vim.opt.statuscolumn = " %s%#AbsoluteLineNr#%l %#RelativeLineNr#%r "
+vim.opt.statuscolumn = " %s%#AbsoluteLineNr#%{v:lnum} %#RelativeLineNr#%{v:relnum} "
 
 local function transparent_background()
 	vim.api.nvim_set_hl(0, "AbsoluteLineNr", { fg = "#a9b1d6", bg = "NONE" })
