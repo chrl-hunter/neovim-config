@@ -1,5 +1,5 @@
-vim.g.user42 = "acoromin"
-vim.g.mail42 = "acoromin@student.42barcelona.com"
+vim.g.user42 = "cperez-h"
+vim.g.mail42 = "cperez-h@student.42barcelona.com"
 vim.g.mapleader = " "
 
 vim.opt.number = true
